@@ -3,8 +3,8 @@ MATLAB codes for performing iterative refinement in up to 3
 different precisions. 
 
 ## Related publications
-* E. Carson and N. J. Higham. A new analysis of iterative refinement and its application 
-to accurate solution of ill-conditioned sparse linear systems. MIMS EPrint 2017.12.
+* E. Carson and N. J. Higham. [A new analysis of iterative refinement and its application 
+to accurate solution of ill-conditioned sparse linear systems](http://eprints.ma.man.ac.uk/2537/01/covered/MIMS_ep2017_12.pdf). MIMS EPrint 2017.12.
 * E. Carson and N. J. Higham. Accelerating the solution of linear systems by 
 iterative refinement in three precisions. MIMS EPrint 2017.x. 
 
@@ -25,9 +25,6 @@ iterative refinement in three precisions. MIMS EPrint 2017.x.
 * This code requires Cleve Laboratory to perform half precision computations and 
 Advanpix Multiprecision Computing Toolbox for extended precision computations. 
 A free trial of Advanpix is available for download from https://www.advanpix.com/.
-    - Versions of functions and scripts that use MATLAB's built-in vpa for extended precision 
-    computations rather than Advanpix can be found in the 'vpa' folder. Note that 
-    using vpa is much slower than Advanpix. 
 
 ## License
 See license.txt for licensing information.
