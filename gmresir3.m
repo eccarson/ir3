@@ -87,11 +87,11 @@ end
 
 %Compute condition number of A, of preconditioned system At, cond(A), and
 %cond(A,x) for the exact solution
-At = double(mp(U,34)\(mp(L,34)\( mp(P,34)*mp(A,34))));
-kinfA = cond(mp(A,34),'inf');
-kinfAt = cond(mp(At,34),'inf');
-condAx = norm(abs(inv(mp(A,34)))*abs(mp(A,34))*abs(xact),inf)/norm(xact,inf);
-condA = norm(abs(inv(mp(A,34)))*abs(mp(A,34)),'inf');
+At = double(mp(double(U),34)\(mp(double(L),34)\( mp(double(P),34)*mp(double(A),34))));
+kinfA = cond(mp(double(A),34),'inf');
+kinfAt = cond(mp(double(At),34),'inf');
+condAx = norm(abs(inv(mp(double(A),34)))*abs(mp(double(A),34))*abs(xact),inf)/norm(xact,inf);
+condA = norm(abs(inv(mp(double(A),34)))*abs(mp(double(A),34)),'inf');
 
 %Note: when kinf(A) is large, the initial solution x can have 'Inf's in it
 %If so, default to using 0 as initial solution
@@ -121,11 +121,11 @@ gmreserr = [];
 while ~cged
     
     %Compute size of errors, quantities in bounds
-    ferr(iter+1) = double(norm(mp(x,34)-mp(xact,34),'inf')/norm(mp(xact,34),'inf'));
-    mu(iter+1) = norm(double(A)*(mp(x,34)-mp(xact,34)),'inf')/(norm(mp(A,34),'inf')*norm(mp(x,34)-mp(xact,34),'inf')); 
+    ferr(iter+1) = double(norm(mp(double(x),34)-mp(xact,34),'inf')/norm(mp(xact,34),'inf'));
+    mu(iter+1) = norm(double(A)*(mp(double(x),34)-mp(xact,34)),'inf')/(norm(mp(double(A),34),'inf')*norm(mp(double(x),34)-mp(xact,34),'inf')); 
     res = double(b) - double(A)*double(x);
-    nbe(iter+1) = double(norm(mp(res,34),'inf')/(norm(mp(A,34),'inf')*norm(mp(x,34),'inf')+ norm(mp(b,34),'inf')));
-    temp = double( abs(mp(res,34)) ./ (abs(mp(A,34))*abs(mp(x,34)) + abs(mp(b,34))) );
+    nbe(iter+1) = double(norm(mp(res,34),'inf')/(norm(mp(double(A),34),'inf')*norm(mp(double(x),34),'inf')+ norm(mp(double(b),34),'inf')));
+    temp = double( abs(mp(res,34)) ./ (abs(mp(double(A),34))*abs(mp(double(x),34)) + abs(mp(double(b),34))) );
     temp(isnan(temp)) = 0; % Set 0/0 to 0.
     cbe(iter+1) = max(temp);
     
@@ -141,7 +141,7 @@ while ~cged
     elseif precr == 2
         rd = double(b) - double(A)*double(x);
     else
-        rd = mp(b,34) - mp(A,34)*mp(x,34);
+        rd = mp(double(b),34) - mp(double(A),34)*mp(double(x),34);
     end
     
     %Scale residual vector
@@ -158,10 +158,10 @@ while ~cged
     end
     
     %Compute quantities in bounds for plotting
-    lim(iter) = double( 2*u*cond(mp(A,34),'inf')*mu(iter));
+    lim(iter) = double( 2*u*cond(mp(double(A),34),'inf')*mu(iter));
     lim2(iter) = double(2*u*condA);  
-    dact = mp(A,34)\mp(rd1,34);
-    etai(iter) = norm(double(mp(d,34)-dact),'inf')/norm(dact,'inf');   
+    dact = mp(double(A),34)\mp(double(rd1),34);
+    etai(iter) = norm(double(mp(double(d),34)-dact),'inf')/norm(dact,'inf');   
     phi(iter) = min(lim(iter),lim2(iter))+etai(iter);
     
     %Record number of iterations gmres took
