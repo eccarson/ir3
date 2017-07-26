@@ -5,8 +5,8 @@ different precisions.
 ## Related publications
 * E. Carson and N. J. Higham. [A new analysis of iterative refinement and its application 
 to accurate solution of ill-conditioned sparse linear systems](http://eprints.ma.man.ac.uk/2537/01/covered/MIMS_ep2017_12.pdf). MIMS EPrint 2017.12.
-* E. Carson and N. J. Higham. Accelerating the solution of linear systems by 
-iterative refinement in three precisions. MIMS EPrint 2017.x. 
+* E. Carson and N. J. Higham. [Accelerating the solution of linear systems by 
+iterative refinement in three precisions](http://eprints.ma.man.ac.uk/2562/01/paper.pdf). MIMS EPrint 2017.24. 
 
 ## Included MATLAB files
 * **_sir3.m_** is a function that performs LU-based iterative refinement with three precisions.
