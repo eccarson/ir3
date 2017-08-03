@@ -19,12 +19,15 @@ iterative refinement in three precisions](http://eprints.ma.man.ac.uk/2562/01/pa
 
 * **_ir3_example.m_** is an example script for running iterative refinement with 3 precisions. The test problems correspond to those used in Figure 10.1 of MIMS EPrint 2017.#.
 
+* The **vpa/** directory contains equivalent versions of these files that work with MATLAB's built-in vpa instead of the Advanpix toolkit. 
+
 
 ## Requirements
 * The codes have been developed and tested with MATLAB 2015b.
 * This code requires Cleve Laboratory to perform half precision computations and 
 Advanpix Multiprecision Computing Toolbox for extended precision computations. 
 A free trial of Advanpix is available for download from https://www.advanpix.com/.
+    * If you prefer to not use the Advanpix library, use the code within the vpa folder, which uses MATLAB's vpa to perform higher precision computations. Note that this is much slower than Advanpix. 
 
 ## License
 See license.txt for licensing information.
