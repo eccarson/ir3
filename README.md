@@ -17,7 +17,7 @@ iterative refinement in three precisions](http://eprints.ma.man.ac.uk/2562/01/pa
 
 * **_gmresir_example.m_** is an example script for comparing LU-IR and GMRES-IR (with 2 precisions). The test problems correspond to those used in Figures 5.1 and 5.2 of MIMS EPrint 2017.12.
 
-* **_ir3_example.m_** is an example script for running iterative refinement with 3 precisions. The test problems correspond to those used in Figure 10.1 of MIMS EPrint 2017.#.
+* **_ir3_example.m_** is an example script for running iterative refinement with 3 precisions. The test problems correspond to those used in Figure 10.1 of MIMS EPrint 2017.24.
 
 * The **_vpa/_** directory contains equivalent versions of these files that work with MATLAB's built-in vpa instead of the Advanpix toolkit. 
 
